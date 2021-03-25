@@ -1,0 +1,69 @@
+.jumbotron {
+    font-size: 4vmin;
+    letter-spacing: 0.4vmin;
+    color: #fff;
+    background: linear-gradient(-45deg, #277280, #1e5f74, #52597e, #1875b3);
+    background-size: 400% 400%;
+    animation: Gradient 15s ease infinite;
+    padding: 2vmin;
+    min-height: 30vmin;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.jumbotron h1{
+    margin-bottom: 2vmin;
+    line-height:10vmin;
+    font-family: 'Lora', serif;
+}
+.jumbotron h2{
+    font-size: 5vmin;
+    margin-bottom: 2vmin;
+    font-family: 'Montserrat', sans-serif;
+}
+.jumbotron p{
+    margin-bottom: 2vmin;
+    font-family: 'Montserrat', sans-serif;
+}
+.jumbotron span{
+    font-size: 2.8vmin;
+    margin-left: 1vmin;
+}
+.jumbotron button{
+    font-family: 'Montserrat', sans-serif;
+    background-color: transparent;
+    color:white;
+    border:1px solid white;
+    border-radius: 0.6rem;
+    padding:1vmin 2vmin;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+.jumbotron button:hover::before{
+    left: 100%;
+}
+.jumbotron button::before{
+    content:"";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.822), transparent);
+    transition: left 0.4s linear;
+}
+
+@keyframes Gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}

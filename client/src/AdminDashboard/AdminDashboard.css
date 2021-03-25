@@ -1,0 +1,100 @@
+.AdminDashboard{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding-right: 2vmin;
+    
+}
+.AdminDashboard-jumbotron{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding-left: 4vmin;
+}
+
+.AdminDashboard-jumbotron img{
+    width:20vmin;
+    margin:5vmin 0;
+    margin-left: 4vmin;
+    
+}
+.AdminDashboard-jumbotron h1{
+    font-size: 5vmin;
+    letter-spacing: 0.3vmin;
+    margin-bottom: 3vmin;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
+.AdminDashboard-links ul{
+    list-style-type: none;
+    margin-right: 4vmin;
+    margin-top: 6vmin;
+}
+.AdminDashboard-links img{
+
+    position:relative;
+    width:6vmin;
+    margin-bottom: 1vmin;
+    z-index: 10;
+}
+.AdminDashboard-links li{
+    position:relative;
+    padding:1vmin 2vmin;
+    display:flex;
+    align-items:center;
+    margin-bottom: 4vmin;
+    /* background-color: #7eca9c; */
+    background-color: #b0eacd;
+}
+.AdminDashboard-links li::before{
+    content:"";
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-color: #74b49b;
+    transform-origin: left center;
+    transform: scaleX(0);
+    transition: transform 0.3s cubic-bezier(1,.06,.55,.71);
+    z-index: 5;
+}
+
+.AdminDashboard-links li:hover::before{
+    transform: scaleX(1);
+}
+.AdminDashboard-links a{
+    position: relative;
+    color:blue;
+    font-size: 2.5vmin;
+    text-decoration: none;
+    margin-left: 2vmin;
+    transform:translateY(-1vmin);
+    font-family: 'Montserrat', sans-serif;
+    z-index: 10;
+}
+.AdminDashboard-links button{
+    position: relative;
+    color:blue;
+    background-color: transparent;
+    border:none;
+    outline:none;
+    font-size: 2.3vmin;
+    text-decoration: none;
+    margin-left: 2vmin;
+    transform:translateY(-1vmin);
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.response-green{
+    width:fit-content;
+    background-color:#7eca9c;
+    font-size:3vmin;
+    letter-spacing: 0.3vmin;
+    padding:1vmin 2vmin;
+    border-radius: 0.5rem;
+    margin: 2vmin auto;
+}

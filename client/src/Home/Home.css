@@ -1,0 +1,17 @@
+.Home-cards{
+    display:grid;
+    grid-template-columns: repeat(4, minmax(min-content, 1fr));
+    grid-column-gap: 6vmin;
+    grid-row-gap: 4vmin;
+    padding: 0 4vmin;
+    margin-top: 4vmin;
+}
+
+@media (max-width:800px) {
+    .Home-cards{
+
+        grid-template-columns: repeat(2, minmax(min-content, 1fr));
+        grid-column-gap: 8vmin;
+
+    }
+}

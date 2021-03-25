@@ -1,0 +1,93 @@
+.Filter{
+    background-image: linear-gradient(to bottom, #5a628a, #565d83, #51587d, #4d5476, #494f70, #494f70, #494f70, #494f70, #4d5476, #51587d, #565d83, #5a628a);
+    transform-origin: center top;
+    height: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition:height 0.3s ease-in-out;
+    color:white;
+}
+
+.Filter.active{
+    height: 42vmin;
+    opacity: 1;
+    pointer-events: all;
+}
+
+.Filter h1{
+    margin-bottom: 2vmin;
+    font-size: 4vmin;
+    letter-spacing: 0.3vmin;
+    font-family: 'Lora', serif;
+}
+.Filter label{
+    display: flex;
+    align-items: center;
+    font-size: 3vmin;
+    margin-bottom:2vmin;
+    font-family: 'Montserrat', sans-serif;
+    
+}
+.Filter input{
+    margin-left: 2vmin;
+}
+
+
+.Filter-container{
+    display:flex;
+    align-items:flex-start;
+    justify-content: space-evenly;
+}
+
+.Filter-container-checkbox,
+.Filter-container-radio{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+}
+.Filter-container-sub-header{
+    align-self: flex-start;
+    font-family: 'Lora', serif;
+    letter-spacing: 0.3vmin;
+    margin-bottom: 2vmin;
+    background-color: #646b8d;
+}
+
+
+.Filter-container input[type="checkbox"]{
+    appearance: none;
+    position: relative;
+    width:6.5vmin;
+    height:2vmin;
+    background-color: white;
+    outline:none;
+    border:none;
+    border-radius: 0.6rem;
+    cursor: pointer;
+}
+.Filter-container input[type="checkbox"]::before{
+    content:"";
+    position: absolute;
+    left:0;
+    top:0;
+    width:2vmin;
+    height:2vmin;
+    border-radius: 50%;
+    background-color: rgb(141, 141, 141);
+    transition:left 0.2s linear;
+}
+.Filter-container input[type="checkbox"]:checked::before{
+    left:72%;
+}
+
+.Filter-container input[type="checkbox"]:checked{
+    background-color: #6070c2;
+}
+
+
+@media (max-width: 768px){
+    .Filter.active{
+        height: 45vmin;
+        
+    }
+}

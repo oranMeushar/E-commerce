@@ -1,0 +1,80 @@
+
+.CartItem{
+    display:flex;
+    align-items:center;
+    margin-bottom: 3vmin;
+    border:1px solid black;
+    font-family: 'Montserrat', sans-serif;
+    padding:1vmin;
+    margin-right: 2vmin;
+    background-image: linear-gradient(to bottom, #adbad3, #aab8d4, #a7b7d5, #a5b5d6, #a2b3d7, #9dafd4, #99abd1, #94a7ce, #8da0c7, #8698c0, #7f91b9, #788ab2);
+}
+
+.CartItem-image{
+    width:35vmin;
+    height:35vmin;
+    object-fit: cover;
+}
+
+.CartItem-recycle{
+    width:4vmin;
+    height:4vmin;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.CartItem-details{
+    font-size: 3vmin;
+    letter-spacing: 0.3vmin;
+    margin:0 4vmin;
+}
+.CartItem-details h1{
+    font-family: 'Lora', serif;
+}
+.CartItem-details > *:not(:last-child){
+    margin-bottom: 4vmin;
+}
+
+.CartItem-recycle-wrapper{
+    display:flex;
+    align-items:center;
+}
+.CartItem-recycle-wrapper h3{
+    font-size: 2vmin;
+    color:rgb(202, 61, 61);
+    margin-left: 1vmin;
+}
+
+.CartItem-right{
+    font-size: 3vmin;
+    display:flex;
+    flex-direction:column;
+    justify-content: space-between;
+    align-items:center;
+    margin-left: auto;
+    align-self: stretch;
+}
+
+
+.CartItem-right-buttons{
+    display:flex;
+    align-items:center;
+    margin: 0 auto;
+
+}
+
+.CartItem-right-buttons button{
+    padding:0.2vmin 3vmin;
+    border-radius: 0.3rem;
+    outline:none;
+    background-color: transparent;
+    border:none;
+    cursor: pointer;
+    border:1px solid grey;
+}
+.CartItem-right-buttons h3{
+    border-right:1px solid grey;
+    border-left:1px solid grey;
+    padding:0 2vmin;
+    border-radius: 0.6rem;
+}

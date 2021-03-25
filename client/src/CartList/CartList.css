@@ -1,0 +1,98 @@
+.CartList{
+    padding:2vmin;
+    display:flex;
+    align-items:flex-start;
+}
+
+.CartList-list-wrapper{
+    width:65%;
+}
+
+.CartList-summary{
+    font-family: 'Montserrat', sans-serif;
+    margin:0 auto;
+    background-image: linear-gradient(to bottom, #e7e6e1, #ebe9e5, #efebea, #f1efee, #f3f2f2, #f4f3f3, #f6f5f5, #f7f6f6, #f8f6f5, #f8f5f4, #f9f5f2, #f8f5f1);
+    padding:2vmin;
+    line-height:10vmin;
+    font-size: 3vmin;
+    position: relative;
+}
+.CartList-summary button{
+    display:block;
+    margin:0 auto;
+}
+.CartList-summary h1{
+    font-family: 'Lora', serif;
+    padding-bottom: 2vmin;
+    border-bottom: 1px solid black;
+    letter-spacing: 0.3vmin;
+}
+.CartList-summary h2{  
+    padding-top: 2vmin;
+    border-top: 1px solid black;
+    
+}
+
+.dark-red{
+    color:rgb(138, 25, 25);
+}
+
+
+.info-button{
+    margin-left: 2vmin;
+    padding:0.4vmin 0.8vmin;
+    border-radius: 0.8rem;
+    font-size:2vmin;
+    cursor: pointer;
+    color:white;
+    background-color:rgb(219, 113, 51);
+    outline:none;
+    border: none;
+    position:absolute;
+    bottom:5vmin;
+    right:10vmin;
+}
+.CartList-info{
+    position:absolute;
+    bottom: -10vmin;
+    right: 10vmin;
+    font-size:2vmin;
+    background-color:rgba(245, 206, 170, 0.801);
+    line-height:3vmin;
+    visibility: hidden;
+    opacity: 0;
+    transition:all 0.3s linear;
+}
+
+.CartList-info.active{
+    visibility: visible;
+    opacity: 1;
+}
+
+.CartList-empty-header{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 4vmin;
+    letter-spacing: 0.3vmin;
+}
+
+@media(max-width:940px){
+    .CartList{
+        flex-direction:column;
+        justify-content:center;
+    }
+    .CartList-list-wrapper{
+        width:85%;
+        margin:0 auto;
+    }
+    .CartList-summary{
+        width:85%;
+    }
+}
+@media(max-width:750px){
+    .CartList-list-wrapper{
+        width:100%;
+    }
+    .CartList-summary{
+        width:100%;
+    }
+}

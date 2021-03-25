@@ -1,0 +1,13 @@
+.OrderList{
+    margin-top: 5vmin;
+}
+.OrderList-titles{
+    border-bottom:1px solid grey;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(min-content, 1fr));
+    justify-items: center;
+    padding-bottom: 2vmin;
+    border-color: lightblue;
+    text-align: center;
+    font-family: 'Lora', serif;
+}

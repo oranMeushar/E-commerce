@@ -1,0 +1,45 @@
+.Order{
+    display: grid;
+    grid-template-columns: repeat(5, minmax(min-content, 1fr));
+    justify-items: center;
+    align-items: center;
+    padding: 2vmin 0;
+    font-size: 2vmin;
+    margin-top:4vmin;
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
+    background-image: linear-gradient(to bottom, #dedada, #e2dfdf, #e7e4e4, #ebe9e9, #f0eeee, #f0eeee, #f0eeee, #f0eeee, #ebe9e9, #e7e4e4, #e2dfdf, #dedada);
+}
+
+.Order h2{
+    font-size: 2.8vmin;
+}
+
+.Order-remove{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 3vmin;
+    opacity:0;
+    visibility:hidden;
+    color:red;
+    cursor: pointer;
+    background-color:transparent;
+    border:none;
+    outline:none;
+    font-weight: 700;
+}
+.Order:hover .Order-remove{
+    opacity:1;
+    visibility:visible;
+}
+
+.Order-details{
+    color:blue;
+    font-size: 2.5vmin;
+    text-decoration: none;
+    outline:none;
+    border:none;
+    background-color: transparent;
+    cursor: pointer;
+}
