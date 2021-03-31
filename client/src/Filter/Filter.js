@@ -54,7 +54,7 @@ const Filter = (props) => {
                         $3000 to $4999<input type="radio" key={props.select} name="price" value="3000 to 4999"/>
                     </label>
                     <label>
-                        $5000 and above<input type="radio" key={props.select} name="price" value="5000 to above"/>
+                        $5000 and above<input type="radio" key={props.select} name="price" value="5000 to 999999"/>
                     </label>
                 </div>
                 <div className="Filter-container-shipping">

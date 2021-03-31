@@ -65,7 +65,7 @@ const getProducts = catchAsync(async(req,res,next) => {
         data:{
             quantity:req.data.length,
             pagination:req.pagination,
-            products:req.data
+            products:await req.data().cache()
         }
     });
 });
@@ -130,7 +130,6 @@ const getRelated = catchAsync(async(req, res, next) =>{
     })
 })
 
-//! i dont understand the purpose of this
 const listCategories = catchAsync(async(req, res, next) =>{
     const categories = await Product.distinct('category', {});
     res.status(200).json({

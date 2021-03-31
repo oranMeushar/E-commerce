@@ -59,15 +59,25 @@ class QueryHandler{
         }
 
 
-        //TODO: i should populate categories somewhere
-        let dataQuery = await this.model
-        .find(this.query)
-        .sort(this.sort)
-        .skip((this.page-1) * this.limit)
-        .limit(this.limit)
-        .select(this.select)
-        .lean()
-        return dataQuery;
+        //TODO: i think this is a hack and there should be
+        //TODO: a better way to return the query as i did in the comment below
+        //TODO: MARK => check this propblem later
+        return ()=>{
+            return this.model
+            .find(this.query)
+            .sort(this.sort)
+            .skip((this.page-1) * this.limit)
+            .limit(this.limit)
+            .select(this.select)
+        }
+        
+        /* return this.model
+            .find(this.query)
+            .sort(this.sort)
+            .skip((this.page-1) * this.limit)
+            .limit(this.limit)
+            .select(this.select)
+            // .lean() */
     }
 
     async getPagination(){

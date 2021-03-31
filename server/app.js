@@ -9,6 +9,7 @@ const userRoute = require('./routes/user');
 const categoryRoute = require('./routes/category');
 const productRoute = require('./routes/product');
 const ordersRoute = require('./routes/orders');
+require('./util/cache');
 
 
 

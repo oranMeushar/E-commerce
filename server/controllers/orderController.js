@@ -4,17 +4,23 @@ const PDFDocument = require('pdfkit');
 const fs = require('fs');
 const Product = require('../models/Product');
 
+
 const postOrder = catchAsync(async(req, res, next) => {
     const data = {...req.body}
     data.userId = req.user._id;
     await Order.create(data);
+    
     res.status(201).json({
         status:'Succes',
         message:'Order created successfully'
     })
 });
 const getOrders = catchAsync(async(req, res, next) => {
-    const data = await Order.find({userId:req.user._id}).select('-__v');
+    const data = await Order
+    .find({userId:req.user._id})
+    .select('-__v')
+    .cache({key:req.user._id});
+
     res.status(200).json({
         status:'Succes',
         orders:data.length,
