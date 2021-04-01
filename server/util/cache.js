@@ -12,7 +12,6 @@ client.on("error", function (err) {
 client.hget = promisify(client.hget);
 const exec = mongoose.Query.prototype.exec;
 
-
 mongoose.Query.prototype.cache = function(options = {}){
     this.useCache = true;
     this.topKey = JSON.stringify(options.key || ''); 
@@ -20,7 +19,6 @@ mongoose.Query.prototype.cache = function(options = {}){
 }
 
 mongoose.Query.prototype.exec = async function(){
-    // console.log(this.mongooseCollection.name);
     // console.log(this.getQuery());
     // console.log(mongoose.modelNames());
     if (!this.useCache) {
@@ -29,20 +27,17 @@ mongoose.Query.prototype.exec = async function(){
     const uniqueKey = JSON.stringify(
         Object.assign({}, this.getQuery(), {collection:this.mongooseCollection.name})
     )
-
-    //! convert collection name from plural to singular
-    let modelName = this.mongooseCollection.name.slice(0, this.mongooseCollection.name.length-1);
-    modelName = modelName.charAt(0).toUpperCase() + modelName.slice(1);
+    let modelPlural = this.mongooseCollection.name.toCapitalSingular();
 
     const chacheValue = await client.hget(this.topKey, uniqueKey);
 
     if (chacheValue) {
         const doc = JSON.parse(chacheValue);
         return Array.isArray(doc)
-        ?doc.map((d)=>mongoose.model(modelName).hydrate(d))
-        :mongoose.model(modelName).hydrate(doc)
+        ?doc.map((d)=>mongoose.model(modelPlural).hydrate(d))
+        :mongoose.model(modelPlural).hydrate(doc)
 
-        //! Another technique
+        //! Another option
         //return Array.isArray(doc)
         //?doc.map((doc) =>new this.model(doc))
         //:new this.model(doc) 

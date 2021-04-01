@@ -1,3 +1,5 @@
+require('./util/prototypes');
+require('./util/cache');
 const express = require('express');
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
@@ -9,9 +11,6 @@ const userRoute = require('./routes/user');
 const categoryRoute = require('./routes/category');
 const productRoute = require('./routes/product');
 const ordersRoute = require('./routes/orders');
-require('./util/cache');
-
-
 
 const app = express();
 dotenv.config({
